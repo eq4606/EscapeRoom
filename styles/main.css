@@ -1,0 +1,192 @@
+body {
+    direction: rtl;
+    margin: 0;
+    font-weight: bold;
+}
+
+.main {
+    background-image: url(../assets/images/blue-bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+}
+
+.airplane-img {
+    position: absolute;
+    width: 50vw;
+    inset: 5vw;
+    transform: rotate(7deg);
+}
+
+.airplane-txt {
+    position: absolute;
+    inset: 8vw;
+    inset-block-start: 20vw;
+    transform: rotate(7deg);
+    font-size: 8vw;
+    color: white;
+}
+
+.tm-img {
+    position: absolute;
+    width: 30vw;
+    inset: 17vw 5vw;
+}
+
+.together-img {
+    position: fixed;
+    width: 35vw;
+    margin: 2.5vw;
+    inset-inline-end: 0;
+    inset-block-end: 0;
+}
+
+.right {
+    width: 60vw;
+}
+
+.left {
+    position: absolute;
+    width: 40vw;
+    padding: 5vw 10vw;
+    inset-inline-end: 0;
+    display: inline-flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.bottom {
+    bottom: 0;
+    position: absolute;
+}
+
+.center {
+    margin-inline: auto;
+    margin-block: 1rem;
+}
+
+.flex-col {
+    display: flex;
+    flex-flow: column;
+}
+
+.d-none {
+    display: none;
+}
+
+video {
+    display: block;
+    width: 50vw;
+    margin: auto;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+.office {
+    background-image: url(../assets/images/office1.jpg);
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+}
+
+.comp {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 260px;
+    right: 90px;
+}
+
+.compScreen {
+    position: relative;
+    height: 200px;
+    width: 100%;
+}
+
+#savescreen {
+    background-image: url(../assets/images/savescreen.jpg);
+    background-size: cover;
+}
+
+#screen {
+    background-image: url(../assets/images/screen.jpg);
+    background-size: contain;
+}
+
+.unvisible {
+    position: absolute;
+    background: transparent;
+    margin: 1px;
+    padding: 0;
+    min-width: unset;
+    border-radius: unset;
+}
+
+#startBtn {
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    height: 10px;
+}
+
+.left-side {
+    left: 0;
+    top: 0;
+    width: 55px;
+    height: 185px;
+}
+
+.right-side {
+    right: 0;
+    top: 0;
+    width: 55px;
+    height: 185px;
+}
+
+#openedStart {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 28%;
+}
+
+#err {
+    width: 30%;
+    position: absolute;
+    top: 35%;
+    right: 35%;
+}
+
+#documentsMsg {
+    width: 40%;
+    position: absolute;
+    top: 30%;
+    right: 30%;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    height: 25%;
+}
+
+.col {
+    max-width: 25%;
+    flex: 25%;
+    background-size: cover;
+}
+
+#water-mark {
+    position: absolute;
+    background: rgba(255,255,255,.5);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding-block: 20%;
+    color: black;
+}

@@ -1,0 +1,68 @@
+button,
+input,
+label,
+a {
+    min-width: 170px;
+    height: 40px;
+    border: 0;
+    margin: 10px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+button, a {
+    border-radius: 0 35px 0 0;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding-inline: 28px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-orangered {
+    background-color: orangered;
+}
+
+.bg-purple {
+    background-color: purple;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.ico {
+    width: 50px;
+    position: absolute;
+    inset-inline-end: -25px;
+}
+
+.ball {
+    position: absolute;
+    display: inline-block;
+    background: darkred;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    inset-inline-end: -22px;
+    top: -2px;
+}
+
+label {
+    color: white;
+}
