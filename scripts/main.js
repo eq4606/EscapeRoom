@@ -42,6 +42,35 @@ function verifyForm(val, i) {
     return false;
 }
 
-function openedStartClick(e) {
-    debugger
+var animalCount = 0, animals = ['parrot', 'lion', 'dolphin'], allCount = 0;
+
+function checkImgPass(animal) {
+    allCount++;
+    if (animal && animals[animalCount] == animal) {
+        animalCount++;
+        if (animalCount === 3) {
+            location.href = './openedComp.html';
+            return true;
+        }
+    }
+    else {
+        animalCount = 0;
+    }
+    if (allCount === 3) {
+        allCount = 0;
+        //TODO ERROR
+        alert('כניסה נכשלה, נסה שנית');
+        return false;
+    }
+    return false;
+}
+
+function verifyDairyCode(code) {
+    if (code === config.d) {
+        document.getElementById('dairy').classList.remove('d-none');
+        document.getElementById('audioDairy').play();
+        return true;
+    }
+    alert('קוד שגוי');
+    return false;
 }

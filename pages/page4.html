@@ -13,18 +13,21 @@
 <body onload="checkValid()">
     <div class="main">
         <div class="right">
+            <img src="../files/page4/bg.png" alt="תמונת רקע" class="bg">
         </div>
         <img src="../assets/images/together-logo.png" alt="" class="together-img">
         <div class="left">
             <a class="" href="../assets/videos/4.mp4" target="_blank">צפיה<img class="ico"
                     src="../assets/icons/view.png" alt=""></a>
-            <a class="" href="../files/page4/" download="" target="_blank">8888888888<span class="ball"></span></a>
+            <a class="" href="../assets/videos/" target="_blank">הסרטות חבילה<img class="ico"
+                    src="../assets/icons/view.png" alt=""></a>
             <button class="" onclick="document.getElementById('verifiForm').classList.remove('d-none')">אימות ומעבר לשלב
                 הבא<img class="ico" src="../assets/icons/verify-and-next.png" alt=""></button>
             <form id="verifiForm" class="d-none flex-col">
                 <label for="verifiText">פענוח כתב החידה</label>
                 <input type="text" name="verifiText" id="verifiText" placeholder="הכניסו כאן">
-                <button type="reset" onclick="verifyForm(document.getElementById('verifiText').value,4)">אימות<img class="ico" src="../assets/icons/verify-and-next.png" alt=""></button>
+                <button type="reset" onclick="verifyForm(document.getElementById('verifiText').value,4)">אימות<img
+                        class="ico" src="../assets/icons/verify-and-next.png" alt=""></button>
             </form>
             <a class="" href="./page3.html">חזרה<img class="ico" src="../assets/icons/back.png" alt=""></a>
         </div>

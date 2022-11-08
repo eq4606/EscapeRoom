@@ -13,18 +13,39 @@
 <body onload="checkValid()">
     <div class="main">
         <div class="right">
+            <img src="../files/page5/bg.jpg" alt="תמונת רקע" class="bg">
         </div>
         <img src="../assets/images/together-logo.png" alt="" class="together-img">
         <div class="left">
             <a class="" href="../assets/videos/5.mp4" target="_blank">צפיה<img class="ico"
                     src="../assets/icons/view.png" alt=""></a>
-            <a class="" href="../files/page5/" download="" target="_blank">8888888888<span class="ball"></span></a>
-            <button class="" onclick="document.getElementById('verifiForm').classList.remove('d-none')">אימות ומעבר לשלב
+            <a class="" href="../files/page5/bg.jpg" target="_blank">מערה מסך מלא<img class="ico"
+                    src="../assets/icons/zoom.png" alt=""></a>
+            <button class="" onclick="document.getElementById('dairyForm').classList.remove('d-none')">יומן<img
+                    class="ico" src="../assets/icons/locked-file.png" alt=""></button>
+            <form id="dairyForm" class="d-none flex-col">
+                <label for="dairyCode">הכנס קוד יומן</label>
+                <input type="text" name="verifyCode" id="verifyCode" placeholder="הכנס כאן">
+                <button type="reset" onclick="verifyDairyCode(document.getElementById('verifyCode').value)">אימות והקראת
+                    היומן<img class="ico" src="../assets/icons/verify-and-next.png" alt=""></button>
+                <div id="dairy" class="d-none">
+                    <audio id="audioDairy" src="../files/page5/oligrach-dairy.mp3"></audio>
+                    <div class="audio-controls">
+                        <button type="button" onclick="document.getElementById('audioDairy').pause();">||</button>
+                        <button type="button" onclick="document.getElementById('audioDairy').play();">></button>
+                        <button type="button"
+                            onclick="document.getElementById('audioDairy').load(); document.getElementById('audioDairy').play();">>></button>
+                    </div>
+                </div>
+            </form>
+            <button class="" onclick="document.getElementById('verifiForm').classList.remove('d-none')">אימות ומעבר
+                לשלב
                 הבא<img class="ico" src="../assets/icons/verify-and-next.png" alt=""></button>
             <form id="verifiForm" class="d-none flex-col">
                 <label for="verifiText">שם היעד הבא הרמוז ביומן האוליגרך</label>
-                <input type="text" name="verifiText" id="verifiText" placeholder="הכניסו כאן">
-                <button type="reset" onclick="verifyForm(document.getElementById('verifiText').value,5)">אימות<img class="ico" src="../assets/icons/verify-and-next.png" alt=""></button>
+                <input type="text" name="verifiText" id="verifiText" placeholder="הכנס כאן">
+                <button type="reset" onclick="verifyForm(document.getElementById('verifiText').value,5)">אימות<img
+                        class="ico" src="../assets/icons/verify-and-next.png" alt=""></button>
             </form>
             <a class="" href="./page4.html">חזרה<img class="ico" src="../assets/icons/back.png" alt=""></a>
         </div>
