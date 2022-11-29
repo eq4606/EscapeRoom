@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/button.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../styles/main.css" media="screen" />
+    <title>חידה ב</title>
+</head>
+
+<body onload="checkValid()">
+    <div class="p1 main">
+        <div class="right">
+            <div class="computer-wrapper">
+                <img src="../files/page2/bg.jpg" alt="תמונת רקע" height="100%">
+                <button onclick="window.open('./comp.html','_blank')"></button>
+            </div>
+            <label>שימו לב! לפתיחת המחשב יש להקיש על מסך המחשב</label>
+        </div>
+        <img src="../assets/images/together-logo.png" alt="" class="together-img">
+        <div class="left">
+            <a class="font-lg" href="../assets/videos/2.mp4" target="_blank">צפיה<img class="ico"
+                    src="../assets/icons/view.png" alt=""></a>
+            <a class="" href="../files/page2/bg.jpg" target="_blank">משרד מסך מלא<img class="ico"
+                    src="../assets/icons/zoom.png" alt=""></a>
+            <button class="" onclick="document.getElementById('verifiForm').classList.remove('d-none')">
+                אימות ומעבר לשלב הבא<img class="ico" src="../assets/icons/verify-and-next.png" alt="">
+            </button>
+            <form id="verifiForm" class="d-none flex-col">
+                <label for="verifiText">מיקום המסמכים</label>
+                <input autocomplete="off" type="text" name="verifiText" id="verifiText" placeholder="הכניסו כאן">
+                <button type="reset" class="font-lg" onclick="verifyForm(document.getElementById('verifiText').value,2)">
+                    אימות<img class="ico" src="../assets/icons/verify-and-next.png" alt="">
+                </button>
+            </form>
+            <a class="font-lg" href="./office.html">חזרה<img class="ico" src="../assets/icons/back.png" alt=""></a>
+        </div>
+    </div>
+    <script type="text/javascript" src="../scripts/main.js"></script>
+</body>
+
+</html>
