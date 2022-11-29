@@ -11,19 +11,49 @@
 </head>
 
 <body>
-    <div id="screen" class="compScreen">
-        <button class="unvisible left-side"
-            onclick="document.getElementById('err').classList.remove('d-none')"></button>
-        <button class="unvisible right-side"
-            onclick="document.getElementById('err').classList.remove('d-none')"></button>
-        <button id="startBtn" class="unvisible"
-            onclick="document.getElementById('openedStart').classList.remove('d-none')"></button>
-        <img class="d-none" id="openedStart" onclick="document.getElementById('openedStart').classList.add('d-none');document.getElementById('documentsMsg').classList.remove('d-none')" src="../assets/images/start.png" alt="">
-        <img class="d-none" id="err" onclick="document.getElementById('err').classList.add('d-none')"
-            src="../assets/images/error.png" alt="">
-        <img class="d-none" id="documentsMsg" src="../assets/images/message.png" onclick="" alt="">
+    <div id="screen" class="compScreen" style="text-align: end;">
+        <!-- <div id="back" class="d-none"></div> -->
+
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/mycomp.jpg" alt="">
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/setup.jpg" alt=""><br>
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/network.jpg" alt="">
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/outlook.jpg" alt=""><br>
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/inbox.jpg" alt="">
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/mediaplayer.jpg" alt=""><br>
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/recyclebox.jpg" alt=""><br>
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/explorer.jpg" alt=""><br>
+        <img class="prog pointer" onclick="show('err')" src="../files/page2/mybrief.jpg" alt="">
+        <div style="width: 100%;">
+            <img style="width: 100%;" src="../files/page2/line.jpg" alt="">
+            <img id="startBtn" class="pointer" onclick="show('openedStart')" src="../files/page2/start.jpg" alt="">
+        </div>
+
+        <div class="d-none" id="openedStart">
+            <img style="height: 100%;" class="pointer" onclick="hide('openedStart');show('err');"
+                src="../files/page2/start.png" alt="">
+            <div id="docbtn" class="pointer" onclick="hide('openedStart');show('docerr');show('err');"></div>
+        </div>
+
+        <div class="d-none" id="err">
+            <img style="width: 100%;" src="../files/page2/error.png" alt="">
+            <div class="d-none" id="docerr">מסמכים לא נמצאו<br>נסה שנית.</div>
+            <div id="retry" class="errbtn pointer" onclick="doRetry(!document.getElementById('docerr').classList.contains('d-none'))">
+            </div>
+            <div id="cancel" class="errbtn pointer" onclick="doCancel(!document.getElementById('docerr').classList.contains('d-none'))"></div>
+        </div>
+        <div class="d-none" id="documentsMsg">
+            <img style="width: 100%;" src="../files/page2/message.png" onclick="" alt="">
+            <div class="pointer" style="position: absolute;top: 51%;inset-inline: 2%;width: 24%;height: 7%;"
+                onclick="hide('documentsMsg')"></div>
+        </div>
+
+        <video class="d-none" id="resvideo" style="position: absolute;width: 100%;height: 100%;top: 0;object-fit: fill;" src="../assets/videos/restart.mp4" autoplay muted></video>
+        <div class="d-none" id="restart" style="position: absolute;width: 26%;top: 14%;inset-inline: 49%;">
+            <img style="width: 100%;" src="../files/page2/init.png" onclick="" alt="">
+            <div class="pointer" style="position: absolute;top: 61%;inset-inline: 35%;width: 39%;height: 18%;" onclick="location.href = './comp.html'"></div>
+        </div>
+
     </div>
-    <script type="text/javascript" src="../config.js"></script>
     <script type="text/javascript" src="../scripts/main.js"></script>
 </body>
 

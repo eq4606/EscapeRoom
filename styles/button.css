@@ -1,11 +1,10 @@
 button,
 input,
-label,
 a {
-    min-width: 170px;
-    height: 40px;
+    width: 200px;
+    height: 50px;
     border: 0;
-    margin: 10px;
+    margin: 1rem;
     font-size: 1rem;
     display: flex;
     justify-content: center;
@@ -13,17 +12,20 @@ a {
     font-family: sans-serif;
 }
 
-button, a {
-    border-radius: 0 35px 0 0;
+button,
+a {
+    border-radius: 0 40px 0 0;
     background: white;
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    padding-inline: 28px;
+    padding-inline: 30px;
 }
+
 a {
     color: black;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 .bg-white {
@@ -47,9 +49,9 @@ a {
 }
 
 .ico {
-    width: 50px;
+    width: 60px;
     position: absolute;
-    inset-inline-end: -25px;
+    inset-inline-end: -30px;
 }
 
 .ball {
@@ -57,12 +59,135 @@ a {
     display: inline-block;
     background: darkred;
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    inset-inline-end: -22px;
-    top: -2px;
+    width: 60px;
+    height: 60px;
+    inset-inline-end: -30px;
+    top: -5px;
 }
 
 label {
     color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.font-lg {
+    font-size: 1.5rem;
+}
+
+#compBtn {
+    position: absolute;
+}
+
+
+.button {
+    --borderWidth: 5;
+    --boxShadowDepth: 8;
+    --buttonColor: #f00;
+    --buttonColor: #FF0033;
+    --fontSize: 1.5;
+    --horizontalPadding: 16;
+    --verticalPadding: 8;
+    background: transparent;
+    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    box-shadow: calc(var(--boxShadowDepth) * 1px) calc(var(--boxShadowDepth) * 1px) 0 #888;
+    color: var(--buttonColor);
+    cursor: pointer;
+    font-size: calc(var(--fontSize) * 1rem);
+    font-weight: bold;
+    outline: transparent;
+    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    position: relative;
+    transition: box-shadow 0.15s ease;
+}
+
+.button:hover {
+    box-shadow: calc(var(--boxShadowDepth) / 2 * 1px) calc(var(--boxShadowDepth) / 2 * 1px) 0 #888;
+}
+
+.button:active {
+    box-shadow: 0 0 0 #888;
+}
+
+.button * {
+    border-radius: 0 40px 0 0;
+}
+
+.button span {
+    -webkit-clip-path: var(--clip);
+    bottom: calc(var(--borderWidth) * -1px);
+    clip-path: var(--clip);
+    left: calc(var(--borderWidth) * -1px);
+    position: absolute;
+    right: calc(var(--borderWidth) * -1px);
+    top: calc(var(--borderWidth) * -1px);
+    z-index: 1;
+}
+
+.button span:nth-of-type(1):hover,
+.button span:nth-of-type(2):hover,
+.button span:nth-of-type(3):hover,
+.button span:nth-of-type(4):hover {
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+}
+
+.button span:nth-of-type(1):hover~b:nth-of-type(1),
+.button span:nth-of-type(2):hover~b:nth-of-type(2),
+.button span:nth-of-type(3):hover~b:nth-of-type(3),
+.button span:nth-of-type(4):hover~b:nth-of-type(4) {
+    --clip: inset(0 0 0 0);
+}
+
+.button span:nth-of-type(1) {
+    --clip: polygon(0 0, 100% 0, 50% 50%, 50% 50%);
+}
+
+.button span:nth-of-type(2) {
+    --clip: polygon(100% 0, 100% 100%, 50% 50%);
+}
+
+.button span:nth-of-type(3) {
+    --clip: polygon(0 100%, 100% 100%, 50% 50%);
+}
+
+.button span:nth-of-type(4) {
+    --clip: polygon(0 0, 0 100%, 50% 50%);
+}
+
+.button b {
+    -webkit-clip-path: var(--clip);
+    background: var(--buttonColor);
+    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    bottom: calc(var(--borderWidth) * -1px);
+    font-weight: bold;
+    clip-path: var(--clip);
+    color: var(--bg, #fafafa);
+    left: calc(var(--borderWidth) * -1px);
+    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    position: absolute;
+    right: calc(var(--borderWidth) * -1px);
+    top: calc(var(--borderWidth) * -1px);
+    transition: -webkit-clip-path 0.25s ease;
+    transition: clip-path 0.25s ease;
+    transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
+}
+
+.button b:nth-of-type(1) {
+    --clip: inset(0 0 100% 0);
+}
+
+.button b:nth-of-type(2) {
+    --clip: inset(0 0 0 100%);
+}
+
+.button b:nth-of-type(3) {
+    --clip: inset(100% 0 0 0);
+}
+
+.button b:nth-of-type(4) {
+    --clip: inset(0 100% 0 0);
 }

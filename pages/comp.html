@@ -11,8 +11,39 @@
 </head>
 
 <body>
-    <div id="savescreen" class="compScreen" onclick="location.href='./passComp.html'"></div>
-    <script type="text/javascript" src="../config.js"></script>
+    <div id="savescreen" class="compScreen">
+        <div id="panel" class="panel"><button class="compBtn" onclick="document.getElementById('panel').classList.add('d-none');document.getElementById('password').classList.remove('d-none');">לפתיחה הקש כאן</button>
+        </div>
+
+        <div id="password" class="d-none" style="padding: 25px;">
+            <div id="water-mark" onclick="document.getElementById('water-mark').classList.add('d-none')">רמז לסיסמה: לחצו על
+                3 החיות בסדר הנכון</div>
+            <div class="row">
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/monkey.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass('elephant')" src="../files/page2/elephant.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/parrot.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/zebra.jpg" alt=""></button>
+            </div>
+            <div class="row">
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/turtle.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/peacock.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/whale.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass('lion')" src="../files/page2/lion.jpg" alt=""></button>
+            </div>
+            <div class="row">
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/bear.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/cow.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/giraffe.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/tiger.jpg" alt=""></button>
+            </div>
+            <div class="row">
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/horse.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/camel.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass('dolphin')" src="../files/page2/dolphin.jpg" alt=""></button>
+                <button class="col"><img onclick="checkImgPass()" src="../files/page2/ram.jpg" alt=""></button>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="../scripts/main.js"></script>
 </body>
 

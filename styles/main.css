@@ -4,12 +4,37 @@ body {
     font-weight: bold;
 }
 
+.box {
+    padding: 2rem;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    inset-inline-end: 35vw;
+    width: 30vw;
+    font-family: sans-serif;
+    font-size: calc(1.75 * 1rem);
+}
+
+#dialogboxfoot {
+    display: flex;
+    justify-content: end;
+}
+
 .main {
     background-image: url(../assets/images/blue-bg.jpg);
     background-size: cover;
     height: 100vh;
     position: relative;
     overflow: auto;
+}
+.main::before {
+    content: 'Copyright 2022 © EF eq4606@gmail.com';
+    position: absolute;
+    color: white;
+    font-family: system-ui;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 5px;
+    bottom: 90px;
 }
 
 .airplane-img {
@@ -45,6 +70,7 @@ body {
 .right {
     width: 65vw;
     display: flex;
+    flex-flow: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -81,7 +107,7 @@ img.bg {
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 video {
@@ -95,6 +121,20 @@ h2 {
     text-align: center;
 }
 
+.computer-wrapper {
+    height: 580px;
+    position: relative;
+}
+
+.computer-wrapper button {
+    position: absolute;
+    bottom: 94px;
+    inset-inline-start: 95px;
+    height: 90px;
+    width: 130px;
+    background-color: transparent;
+}
+
 .comp {
     width: 17%;
     height: 16%;
@@ -106,6 +146,8 @@ h2 {
 .compScreen {
     position: relative;
     height: 100vh;
+    width: 141vh;
+    margin: auto;
 }
 
 #savescreen {
@@ -116,10 +158,11 @@ h2 {
 }
 
 #screen {
-    background-image: url(../files/page2/screen.jpg);
+    background-image: url(../files/page2/bg-comp.jpg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    /*background-position: center;*/
+    background-color: #008286;
 }
 
 .unvisible {
@@ -132,31 +175,39 @@ h2 {
 }
 
 #startBtn {
-    left: 0;
-    bottom: 0;
-    width: 20px;
-    height: 10px;
+    position: absolute;
+    inset-inline-end: 0;
+    height: 7vh;
 }
 
-.left-side {
-    left: 0;
-    top: 0;
-    width: 55px;
-    height: 185px;
+.pointer {
+    cursor: pointer;
 }
 
-.right-side {
-    right: 0;
-    top: 0;
-    width: 55px;
-    height: 185px;
+.errbtn {
+    position: absolute;
+    height: 18%;
+    top: 69%;
+    inset-inline: 52%;
+    width: 39%;
+}
+
+#cancel {
+    inset-inline: 9%;
+}
+
+#docbtn {
+    width: 100%;
+    position: absolute;
+    height: 8vh;
+    top: 8vh;
 }
 
 #openedStart {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 28%;
+    height: 64vh;
 }
 
 #err {
@@ -164,13 +215,24 @@ h2 {
     position: absolute;
     top: 35%;
     right: 35%;
+    z-index: 11;
 }
 
 #documentsMsg {
-    width: 40%;
+    width: 55%;
     position: absolute;
-    top: 30%;
-    right: 30%;
+    top: 18%;
+    right: 22%;
+}
+
+#back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .25;
+    background: black;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .row {
@@ -187,23 +249,138 @@ h2 {
 }
 
 .col:active {
-    box-shadow: rgb(204 219 232) 3px 3px 6px 0px inset, rgb(255 255 255 / 50%) -3px -3px 6px 1px inset;
+    height: calc(100% - 10px);
+    flex: calc(25% - 10px);
+    max-width: calc(25% - 10px);
+    border-style: solid;
+    border-width: 5px;
+    border-top-color: #eee;
+    border-left-color: #999;
+    border-bottom-color: #666;
+    border-right-color: #333;
+    border-radius: 5px;
+}
+
+.col img {
+    width: 100%;
+}
+
+button.col {
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 #water-mark {
     position: absolute;
+    z-index: 1;
     background: rgba(255, 255, 255, .5);
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
     text-align: center;
     box-sizing: border-box;
     padding-block: 20%;
     color: black;
 }
 
-.audio-controls button{
+.programs {
+    width: 40vh;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+}
+
+.prog {
+    height: 15vh;
+}
+
+#docerr {
+    position: absolute;
+    top: 25%;
+    inset-inline: 2%;
+    padding: 5%;
+    font-size: larger;
+    background: #c2c6cb;
+    width: 62%;
+    text-align: start;
+    color: #151518;
+    font-family: sans-serif;
+}
+
+.audio-controls button {
     border-radius: 100%;
-    min-width: 40px;
+    width: 50px;
     padding: 0;
     display: inline;
+}
+
+.safes {
+    position: absolute;
+    display: flex;
+    height: 580px;
+}
+
+.safe {
+    height: 60%;
+    margin: auto 20px;
+}
+
+.puzzle {
+    display: flex;
+    flex-flow: column;
+    width: 60%;
+}
+
+.puzzle label {
+    margin-block: 1rem;
+}
+
+.puzzle div {
+    display: flex;
+}
+
+.ans {
+    background: unset;
+    padding: 0;
+    width: unset;
+    height: unset;
+    margin: 0;
+    flex: 1 0 33.3%;
+    max-width: 33.3%;
+}
+
+.ans img {
+    width: 100%;
+}
+
+.emergency-wrapper {
+    height: 450px;
+    position: relative;
+}
+
+.emergency-input {
+    position: absolute;
+    bottom: 76px;
+    height: 64px;
+    width: 365px;
+    inset-inline-start: 227px;
+    font-size: 2rem;
+}
+
+.panel {
+    position: absolute;
+    bottom: 3vh;
+    width: 100%;
+}
+
+.compBtn {
+    width: 30%;
+    background-color: rgba(250, 250, 250, .5);
+    border-radius: 0;
+    border: 4px solid lightslategray;
+    margin-inline: auto;
+}
+
+.compBtn:hover,
+.compBtn:focus {
+    opacity: .75;
 }
