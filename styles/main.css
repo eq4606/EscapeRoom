@@ -27,7 +27,7 @@ body {
     overflow: auto;
 }
 .main::before {
-    content: 'Copyright 2022 © EF eq4606@gmail.com';
+    content: 'Copyright 2022 \00a9 EF eq4606@gmail.com \00a0\00a0 קרדיט: תמונות :freepik קליפים: pixabay';
     position: absolute;
     color: white;
     font-family: system-ui;
@@ -35,6 +35,8 @@ body {
     text-orientation: mixed;
     padding: 5px;
     bottom: 90px;
+    font-weight: 100;
+    font-size: 14px;
 }
 
 .airplane-img {
@@ -298,7 +300,7 @@ button.col {
     top: 25%;
     inset-inline: 2%;
     padding: 5%;
-    font-size: larger;
+    font-size: 3vh;
     background: #c2c6cb;
     width: 62%;
     text-align: start;

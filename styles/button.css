@@ -20,7 +20,7 @@ a {
     cursor: pointer;
     position: relative;
     padding-inline: 30px;
-}
+    text-align: center;}
 
 a {
     color: black;

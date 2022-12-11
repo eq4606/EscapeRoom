@@ -1,18 +1,3 @@
-const config = {
-    vc: '123',//verification code
-    dfu: [07, 10, 29, 11, 34, 22],//date first of use: [07,dd,29,mm,34,yy]
-    p: [
-        'פריצארד 106 יוהנסבורג',
-        'בתוך הנברשת',
-        'הפארק הלאומי קרוגר',
-        'יומן הסוד תמצא אצל אביקו הזדהה עם חולצת האותיות',
-        'מכרה פינש מכרה האוצר',
-    ],
-    d: '672BSOSD',//dairy
-    e: '1.25.30'//emergency safe
-};
-
-
 function CustomAlert() {
     this.alert = function (message, title) {
         document.body.innerHTML = document.body.innerHTML + '<div id="dialogoverlay"></div><div id="dialogbox" class="slit-in-vertical"><div><div id="dialogboxhead"></div><div id="dialogboxbody"></div><div id="dialogboxfoot"></div></div></div>';
@@ -22,14 +7,16 @@ function CustomAlert() {
 
         //let winH = window.innerHeight;
         dialogoverlay.style.height = "100vh";//winH + "px";
-        dialogoverlay.style.height = "100vw";
+        dialogoverlay.style.width = "100vw";
         dialogoverlay.style.top = "0";
+        dialogoverlay.style.background = "black";
+        dialogoverlay.style.opacity = ".35";
 
         dialogbox.style.top = "0";
 
         dialogoverlay.style.display = "block";
         dialogbox.style.display = "block";
-        
+
         dialogoverlay.style.position = "absolute";
         dialogbox.style.position = "absolute";
 
@@ -54,6 +41,20 @@ function CustomAlert() {
 
 let customAlert = new CustomAlert();
 
+const config = {
+    vc: '123',
+    dfu: [07, 11, 29, 12, 34, 22],
+    p: [
+        'פריצארד 106 יוהנסבורג דרום אפריקה',
+        'בתוך הנברשת',
+        'הפארק הלאומי קרוגר',
+        'יומן הסוד תמצא אצל אביקו הזדהה עם חולצת האותיות',
+        'מכרה פיניש מכרה האוצר',
+    ],
+    d: '672BSOSD',
+    e: '1.25.30',
+    ms: '5000'
+};
 
 function checkValid() {
     thisDate = new Date()
@@ -65,11 +66,13 @@ function checkValid() {
         }
     }
     customAlert.alert('אינכם רשאים להשתמש בתוכנה\n לפרטים פנו אל מנהל המערכת');
-    if (location.href.split('/').pop() == 'index.html')
-        location.reload();
-    else location.href = '../index.html';
+    if (location.href.split('?')[0].split('/').pop() !== encodeURI('טעות_ממולכדת_המשחק.html')) {
+        location.href = '../טעות_ממולכדת_המשחק.html';
+    }
     return false;
 }
+
+checkValid();
 
 function verifyLicense(verificationCode) {
     if (verificationCode === config.vc) {
@@ -77,8 +80,7 @@ function verifyLicense(verificationCode) {
             location.href = './pages/homepage.html';
             return true;
         }
-        customAlert.alert('תוקף הרשיון פג\n נא פנו למנהל המערכת')
-        location.reload();
+        customAlert.alert('תוקף הרשיון פג\n נא פנו למנהל המערכת');
         return false;
     }
     if (!document.getElementById('verifiForm').classList.contains('d-none')) {
@@ -88,7 +90,7 @@ function verifyLicense(verificationCode) {
     return false;
 }
 
-var pages = ['homepage', 'office', 'computer', 'room', 'jungle', 'cabe', 'safe', '../index']
+var pages = ['homepage', 'office', 'computer', 'room', 'jungle', 'cabe', 'safe', '../טעות_ממולכדת_המשחק']
 
 function verifyForm(val, i, next) {
     if (config.p[i - 1] == val) {
